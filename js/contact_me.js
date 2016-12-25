@@ -19,13 +19,15 @@ $(function() {
             $.ajax({
             // TODO send ajax call to http://weisser-kurpark.de/system-cgi/formmailc.pl
             // https://admin.df.eu/001169394zrw5kz973s1frxmra9zyrtb/kunde/preinstalled.php
-                url: "././mail/contact_me.php",
+            // Use formspree to send mails
+                url: "https://formspree.io/kunde.weisser@gmail.com",
                 type: "POST",
                 data: {
                     name: name,
                     email: email,
                     message: message
                 },
+                dataType: "json",
                 cache: false,
                 success: function() {
                     // Success message
@@ -33,7 +35,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Danke für Ihre Nachricht. Wir werden uns bald mit Ihnen in Verbindung setzen.</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -45,7 +47,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>Ihre Nachricht konnte leider nicht gesendet werden. Bitte versuchen Sie es später noch einmal oder verwenden Sie die Kontaktinformationen am Ende dieser Seite.");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
