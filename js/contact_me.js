@@ -17,6 +17,8 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
+            // TODO send ajax call to http://weisser-kurpark.de/system-cgi/formmailc.pl
+            // https://admin.df.eu/001169394zrw5kz973s1frxmra9zyrtb/kunde/preinstalled.php
                 url: "././mail/contact_me.php",
                 type: "POST",
                 data: {
