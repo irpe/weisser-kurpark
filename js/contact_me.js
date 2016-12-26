@@ -20,7 +20,7 @@ $(function() {
             // TODO send ajax call to http://weisser-kurpark.de/system-cgi/formmailc.pl
             // https://admin.df.eu/001169394zrw5kz973s1frxmra9zyrtb/kunde/preinstalled.php
             // Use formspree to send mails
-                url: "https://formspree.io/kunde.weisser@gmail.com",
+                url: "https://formspree.io/info@weisser-kurpark.de",
                 type: "POST",
                 data: {
                     name: name,
